@@ -9,7 +9,7 @@ window.addEventListener('load', function () {
 
   if (selectedMuse === 'Shakespeare') {
     // Shakespeare mode
-    fetch('../shakespeare.json')
+    fetch('https://hspchung.github.io/gather-ye-rosebuds/shakespeare.json')
       .then(response => response.json())
       .then(data => {
 
