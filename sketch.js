@@ -59,7 +59,7 @@ window.addEventListener('load', function () {
 let canvas;
 let bubbles = [];
 let bubble;
-let sect, line, submit, input;
+let sect, line, submit, input, entry;
 let outputCount = 0;
 let selectedMuse;
 
@@ -69,13 +69,13 @@ let G; // golden angle
 let rose;
 let newRosePos = true;
 let roseX, roseY;
-let roses = [];
 
 //Select HTML elements
 sect = document.querySelector('.output');
 input = document.querySelector('#poem');
 submit = document.querySelector('.submitButton');
 clearContent = document.querySelector('.clearButton');
+entry = document.querySelector('#entry');
 
 //Auto-select text box
 input.focus();
@@ -84,6 +84,12 @@ input.select();
 //Submit click
 submit.addEventListener('click', function lineEntry() {
 
+  //Changes output font based on Muse
+  if (selectedMuse === 'Shakespeare') {
+    sect.setAttribute('id', 'shakespeare');
+  } else if (selectedMuse === 'Kanye') {
+    sect.setAttribute('id', 'kanye');
+  }
   //Max output count
   if (outputCount < 5 && input.value != '') {
 
@@ -91,17 +97,8 @@ submit.addEventListener('click', function lineEntry() {
     sect.appendChild(line);
     line.innerHTML = input.value;
     line.setAttribute('class', 'outputLine');
-
-    //Changes output font based on Muse
-    if (selectedMuse === 'Shakespeare') {
-      sect.setAttribute('id', 'shakespeare');
-    } else if (selectedMuse === 'Kanye') {
-      sect.setAttribute('id', 'kanye');
-    }
-
     input.value = '';
     outputCount++;
-    entryMade;
 
     //Send user back to text box
     input.focus();
@@ -129,14 +126,12 @@ input.addEventListener("keyup", function (event) {
 //Remove entries and clear page
 //REF: https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild
 clearContent.onclick = function () {
-  let entry = document.getElementById("entry");
   while (entry.firstChild) {
     entry.removeChild(entry.firstChild);
   }
   bubbles = [];
   outputCount = 0;
   background(250);
-
 }
 
 //p5 code
