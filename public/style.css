@@ -1,0 +1,51 @@
+body {
+    font-family: 'EB Garamond', serif;
+    padding: 20px;
+    
+    /* Turn off mouse drag select; REF: https://stackoverflow.com/questions/5429827/how-can-i-prevent-text-element-selection-with-cursor-drag*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    margin: 0px;
+    text-align: center;
+}
+
+button {
+    font-family:monospace;
+    color: whitesmoke;
+    font-size: 30px;
+    background-color: teal;
+    border: 2px greenyellow;
+    width: 150px;
+    text-align: center;
+}
+
+button:hover {
+    background-color: rgb(168, 117, 252);
+  }
+
+.project_heading {
+    flex-direction: column;
+}
+
+.title {
+    font-family: 'EB Garamond', serif;
+    font-size: 80px;
+}
+
+.role_pick {
+    justify-content:space-evenly;
+    min-width: 50vw;
+}

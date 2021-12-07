@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GYR: Creative Journal</title>
+    <script src="libraries/p5.js"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Unna&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section class="project_heading">
+        <div class="project_desc">
+            <h1 class="title">Gather Ye Rosebuds</h1>
+            <p>You are the <strong>Writer</strong></p>
+            <p>Up to <strong>5 lines</strong> for your current mood &#128512;
+            </p>
+        </div>
+    </section>
+    <!-- Text Output -->
+    <section class="output" id="entry"> 
+    </section>
+    <!-- APIs & Inputs -->
+    <section class="muse">
+    </section>
+    <section class="input">
+        <input type="text" id="poem" size="10" minlength="1" maxlength="80">
+        <button class="submitButton">Enter</button>
+    </section>
+    <section class="actions">
+        <button class="clearButton">Clear</button>
+    </section>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <!-- p5 sketch and class scripts -->
+    <script src="objects/bubble.js"></script>
+    <script src="objects/rose.js"></script>
+    <script class="sketch" src="sketch.js"></script>
+</body>
+
+</html>
