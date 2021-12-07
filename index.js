@@ -2,6 +2,8 @@ let express = require('express');
 let app = express();
 app.use('/', express.static('public'));
 
+let fs = require('fs');
+
 //Initialize the actual HTTP server
 let http = require('http');
 let server = http.createServer(app);
