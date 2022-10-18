@@ -9,13 +9,13 @@ window.addEventListener('load', function () {
 
   console.log('page has loaded');
 
-  //Random selection of one of two different prompt sources
-  let muses = ['Kanye', 'Shakespeare'];
-  selectedMuse = muses[Math.floor(Math.random() * muses.length)];
+  // //Random selection of one of two different prompt sources
+  // let muses = ['Kanye', 'Shakespeare'];
+  selectedMuse = 'Shakespeare';
 
-  if (selectedMuse === 'Shakespeare') {
+  //if (selectedMuse === 'Shakespeare') {
     // Shakespeare mode
-    fetch('https://hspchung.github.io/gather-ye-rosebuds/shakespeare.json')
+    fetch('shakespeare.json')
       .then(response => response.json())
       .then(data => {
 
@@ -35,31 +35,7 @@ window.addEventListener('load', function () {
       .catch(error => {
         console.log(error);
       })
-  } else {
-
-    // Kanye Mode
-    fetch('https://api.kanye.rest/')
-      .then(response => response.json())
-      .then(data => {
-
-        //Add phrase above input box
-        let randomPrompts = data.quote;
-        let projectDesc = document.querySelector('.muse');
-        let projectPrompt = document.createElement('p');
-        let projectMuse = document.createElement('p');
-        projectPrompt.setAttribute('class', 'prompt');
-        projectMuse.setAttribute('class', 'prompt');
-        projectPrompt.innerHTML = '"' + randomPrompts + '"';
-        projectMuse.innerHTML = "Today's Muse: Kanye";
-        projectDesc.prepend(projectPrompt);
-        projectDesc.prepend(projectMuse);
-
-      })
-
-      .catch(error => {
-        console.log(error);
-      })
-  }
+  //}
 })
 
 //List of global variables
@@ -68,7 +44,7 @@ let bubbles = [];
 let bubble;
 let sect, line, submit, input, entry;
 let outputCount = 0;
-let selectedMuse;
+//let selectedMuse;
 
 //Rose variables
 //Rose inspiration from Shu's Creative Sketch: https://editor.p5js.org/shuz/sketches/8uSUQRYW2
@@ -90,11 +66,11 @@ socket.on('write-object', function (obj) {
 
 function writeEntry(obj){
   //Change font based on Muse
-  if (obj.muse === 'Shakespeare') {
+  // if (obj.muse === 'Shakespeare') {
     sect.setAttribute('id', 'shakespeare');
-  } else if (obj.muse === 'Kanye') {
-    sect.setAttribute('id', 'kanye');
-  }
+  // } else if (obj.muse === 'Kanye') {
+  //   sect.setAttribute('id', 'kanye');
+  // }
 
   let line = document.createElement('p');
   sect.appendChild(line);
