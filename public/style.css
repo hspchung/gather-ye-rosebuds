@@ -15,6 +15,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 10px;
 }
 
 p {
@@ -43,9 +44,4 @@ button:hover {
 .title {
     font-family: 'EB Garamond', serif;
     font-size: 80px;
-}
-
-.role_pick {
-    justify-content:space-evenly;
-    min-width: 50vw;
 }
